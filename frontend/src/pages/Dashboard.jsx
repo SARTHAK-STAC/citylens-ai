@@ -1,67 +1,54 @@
-import Sidebar from "../components/layout/Sidebar";
-import Navbar from "../components/layout/Navbar";
-import StatCard from "../components/dashboard/KPICard";
-import AIInsight from "../components/AIInsight";
-import ChartCard from "../components/ChartCard";
+import Hero from "../components/dashboard/Hero";
+import KPIGrid from "../components/dashboard/KPIGrid";
+import TrendChart from "../components/dashboard/TrendChart";
+import CategoryChart from "../components/dashboard/CategoryChart";
+import AIRecommendation from "../components/dashboard/AIRecommendation";
+import RecentComplaints from "../components/dashboard/RecentComplaints";
+import HeatmapCard from "../components/dashboard/HeatmapCard";
 
 export default function Dashboard() {
   return (
-    <div className="flex min-h-screen bg-slate-950 text-white">
-      <Sidebar />
+    <div className="space-y-8">
 
-      <div className="flex-1">
-        <Navbar />
+      {/* Hero */}
+      <Hero />
 
-        <main className="p-6">
+      {/* KPI Cards */}
+      <KPIGrid />
 
-          <div className="grid grid-cols-4 gap-5">
+      {/* Charts */}
+      <section className="grid grid-cols-12 gap-6">
 
-            <StatCard
-              title="Total Complaints"
-              value="364,558"
-              color="blue"
-            />
+        <div className="col-span-8">
+          <TrendChart />
+        </div>
 
-            <StatCard
-              title="Open Cases"
-              value="1,640"
-              color="red"
-            />
+        <div className="col-span-4">
+          <CategoryChart />
+        </div>
 
-            <StatCard
-              title="Closed Cases"
-              value="362,114"
-              color="green"
-            />
+      </section>
 
-            <StatCard
-              title="Avg Resolution"
-              value="4.2 hrs"
-              color="purple"
-            />
+      {/* Bottom Section */}
+      <section className="grid grid-cols-12 gap-6">
 
-          </div>
+        {/* Heatmap */}
+        <div className="col-span-5 h-[500px]">
+          <HeatmapCard />
+        </div>
 
-          <div className="grid grid-cols-3 gap-5 mt-6">
+        {/* AI */}
+        <div className="col-span-4 h-[500px]">
+          <AIRecommendation />
+        </div>
 
-            <div className="col-span-2">
-              <ChartCard title="Complaint Trend" />
-            </div>
+        {/* Recent */}
+        <div className="col-span-3 h-[500px]">
+          <RecentComplaints />
+        </div>
 
-            <ChartCard title="Complaint Types" />
+      </section>
 
-          </div>
-
-          <div className="grid grid-cols-2 gap-5 mt-6">
-
-            <ChartCard title="Borough Distribution" />
-
-            <AIInsight />
-
-          </div>
-
-        </main>
-      </div>
     </div>
   );
 }

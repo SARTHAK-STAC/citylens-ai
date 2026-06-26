@@ -1,8 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
 @import "tailwindcss";
 
+:root{
+  --bg:#0C1016;
+  --sidebar:#11151C;
+  --card:#171C24;
+  --border:#262C36;
+  --text:#F8FAFC;
+  --muted:#94A3B8;
+  --primary:#3B82F6;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+  width:100%;
+  height:100%;
+}
+
 body{
-    margin:0;
-    background:#020617;
-    color:white;
-    font-family:Inter,sans-serif;
+  font-family:"Inter",sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
